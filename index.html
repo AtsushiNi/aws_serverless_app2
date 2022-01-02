@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script src="main.bundle.js"></script>
+
+    <script>
+      function getName() { return document.getElementById('Username').value }
+      function getPass() { return document.getElementById('Password').value }
+      function putRes(res) {
+        document.getElementById('Result').innerHTML = JSON.stringify(res, null, 2);
+      }
+    </script>
+
+    <style>
+      pre {
+        overflow: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: dimgray;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 0px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="one-third column">
+            <form>
+              <label for="Username">Username</label>
+              <input class="u-full-width" type="text" placeholder="Username" id="Username">
+              <label for="Username">Password</label>
+              <input class="u-full-width" type="password" placeholder="Password" id="Password">
+              <div class="row">
+                <input class="one-half column button-primary" type="button" value="login" onclick="signIn(getName(), getPass()).then(r => putRes(r)).catch(e => putRes(e))">
+                <input class="one-half column" type="button" value="logout" onclick="console.log(signOut())">
+              </div>
+              <div class="row">
+                <input class="u-full-width" type="button" value="getData" onclick="getData().then(r => putRes(r)).catch(e => putRes(e))">
+              </div>
+            </form>
+          </div>
+          <div class="two-thirds column">
+            <label>Output</label>
+            <pre id="Result"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

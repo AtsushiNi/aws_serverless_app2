@@ -1,0 +1,119 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsserverlessapp-dev-144818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::671620411615:role/amplify-awsserverlessapp-dev-144818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::671620411615:role/amplify-awsserverlessapp-dev-144818-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-awsserverlessapp-dev-144818-deployment",
+      "UnauthRoleName": "amplify-awsserverlessapp-dev-144818-unauthRole",
+      "StackName": "amplify-awsserverlessapp-dev-144818",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:671620411615:stack/amplify-awsserverlessapp-dev-144818/99cae8b0-6b8f-11ec-afc3-0e6baff13def",
+      "AmplifyAppId": "d6s4auehf59cc"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsserverlessapp-dev-144818-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2022-01-02T06:35:29.565Z",
+      "output": {},
+      "lastPushDirHash": "YSvhZsWTF8ATcF4wZuU0ej3JTcY="
+    }
+  },
+  "function": {
+    "AWSServerlessAppAmplify": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2022-01-02T06:03:00.216Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-01-02T06:03:00.276Z",
+      "distZipFilename": "AWSServerlessAppAmplify-46614a752b746d79664e-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-awsserverlessapp-dev-144818-deployment",
+        "s3Key": "amplify-builds/AWSServerlessAppAmplify-46614a752b746d79664e-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsserverlessapp-dev-144818-deployment/amplify-cfn-templates/function/AWSServerlessAppAmplify-cloudformation-template.json",
+        "logicalId": "functionAWSServerlessAppAmplify"
+      },
+      "lastPushTimeStamp": "2022-01-02T06:35:29.567Z",
+      "output": {
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:671620411615:function:AWSServerlessAppAmplify-dev",
+        "Name": "AWSServerlessAppAmplify-dev",
+        "LambdaExecutionRole": "awsserverlessappLambdaRolec40c13c8-dev"
+      },
+      "lastPushDirHash": "YRTaavLq3XM8ShcF+gEUw9XBEoU="
+    }
+  },
+  "api": {
+    "api6bff470c": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "AWSServerlessAppAmplify",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsserverlessapp-dev-144818-deployment/amplify-cfn-templates/api/api6bff470c-cloudformation-template.json",
+        "logicalId": "apiapi6bff470c"
+      },
+      "lastPushTimeStamp": "2022-01-02T06:35:29.569Z",
+      "output": {
+        "ApiName": "api6bff470c",
+        "RootUrl": "https://i6fy6rr3o7.execute-api.ap-northeast-1.amazonaws.com/dev",
+        "ApiId": "i6fy6rr3o7"
+      },
+      "lastPushDirHash": "fJTVJX7RPD9Ep0BOoGnH1wEtBw8="
+    }
+  },
+  "auth": {
+    "awsserverlessapp04bf3f9f": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "ap-northeast-1_5ZN0bGZcS",
+        "UserPoolName": "aws_serverless_app_user_pool",
+        "AppClientID": "1vsstg2reo469vi7284fc4kt6h",
+        "AppClientIDWeb": "1vsstg2reo469vi7284fc4kt6h"
+      },
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "lastPushTimeStamp": "2022-01-02T06:35:46.072Z"
+    }
+  }
+}

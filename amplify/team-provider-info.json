@@ -1,0 +1,37 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsserverlessapp-dev-144818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::671620411615:role/amplify-awsserverlessapp-dev-144818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::671620411615:role/amplify-awsserverlessapp-dev-144818-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-awsserverlessapp-dev-144818-deployment",
+      "UnauthRoleName": "amplify-awsserverlessapp-dev-144818-unauthRole",
+      "StackName": "amplify-awsserverlessapp-dev-144818",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:671620411615:stack/amplify-awsserverlessapp-dev-144818/99cae8b0-6b8f-11ec-afc3-0e6baff13def",
+      "AmplifyAppId": "d6s4auehf59cc"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d6s4auehf59cc",
+          "type": "manual"
+        }
+      },
+      "function": {
+        "AWSServerlessAppAmplify": {
+          "deploymentBucketName": "amplify-awsserverlessapp-dev-144818-deployment",
+          "s3Key": "amplify-builds/AWSServerlessAppAmplify-46614a752b746d79664e-build.zip"
+        }
+      },
+      "auth": {
+        "awsserverlessapp04bf3f9f": {
+          "userPoolId": "ap-northeast-1_5ZN0bGZcS",
+          "userPoolName": "aws_serverless_app_user_pool",
+          "webClientId": "1vsstg2reo469vi7284fc4kt6h",
+          "nativeClientId": "1vsstg2reo469vi7284fc4kt6h"
+        }
+      }
+    }
+  }
+}
